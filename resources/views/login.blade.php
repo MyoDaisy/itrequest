@@ -25,26 +25,29 @@
 
         <div class="card panel panel-default ks-light ks-panel">
             <div class="card-block">
-                <form class="form-container">
+                <form class="form-container" method="POST">
+                    {{csrf_field()}}
                     <h4 class="ks-header">Login</h4>
                     <div class="form-group">
                         <div class="input-icon icon-left icon-lg icon-color-primary">
-                            <input type="text" class="form-control" placeholder="Email">
+                            <input type="text" class="form-control" name="username" placeholder="Username">
                             <span class="icon-addon">
                                 <span class="fa fa-at"></span>
                             </span>
                         </div>
                     </div>
+                    <p class="text-red">{{ $errors->first('username') }}</p>
                     <div class="form-group">
                         <div class="input-icon icon-left icon-lg icon-color-primary">
-                            <input type="text" class="form-control" placeholder="Password">
+                            <input type="text" class="form-control" name="password" placeholder="Password">
                             <span class="icon-addon">
                                 <span class="fa fa-key"></span>
                             </span>
                         </div>
                     </div>
+                    <p class="text-red">{{ $errors->first('password') }}</p>
                     <div class="form-group">
-                        <button type="button" class="btn btn-primary btn-block">Login</button>
+                        <button type="submit" class="btn btn-primary btn-block">Login</button>
                     </div>
                     <div class="ks-text-center">
                         Don't have an account. <a href="pages-signup.html">Sign Up</a>

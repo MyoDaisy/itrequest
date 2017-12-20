@@ -19,6 +19,10 @@ Route::get('/signup', function () {
     return view('signup');
 });
 
-Route::get('/login', function () {
-    return view('login');
+Route::get('/login', 'LoginController@show');
+
+Route::post('/login', 'LoginController@request');
+
+Route::get('/add', function () {
+    return view('addrequest');
 });

@@ -40,7 +40,7 @@
         <a href="#" class="ks-sidebar-toggle"><i class="fa fa-bars" aria-hidden="true"></i></a>
         <a href="#" class="ks-sidebar-mobile-toggle"><i class="fa fa-bars" aria-hidden="true"></i></a>
         <!-- END RESPONSIVE SIDEBAR TOGGLER -->
-        <a href="?c=view" class="ks-logo">Kosmo</a>
+        <a href="#" class="ks-logo">Request IT</a>
 
     </div>
     <!-- END LOGO -->
@@ -86,9 +86,6 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="nav-item nav-link ks-btn-action">
-                    <a class="btn btn-info" href="#">Create</a>
                 </div>
             </div>
             <!-- END NAVBAR MENU -->
@@ -283,188 +280,7 @@
 
 <!-- BEGIN NAVBAR HORIZONTAL -->
 <div class="ks-navbar-horizontal ks-info">
-    <!-- <ul class="nav nav-pills">
-        <li class="nav-item">
-            <a class="nav-link active" href="index.html">Dashboard</a>
-        </li>
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Layouts</a>
-            <div class="dropdown-menu">
-                <a class="dropdown-item active" href="../horizontal_navbar-primary/index.html" target="_blank">Horizontal</a>
-                <a class="dropdown-item" href="../horizontal_navbar_iconbar-primary/index.html" target="_blank">Horizontal Iconbar</a>
-            </div>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="projects-kanban-board.html">
-                <span class="ks-text">Projects</span>
-            </a>
-        </li>
-
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                Mail
-            </a>
-
-            <div class="dropdown-menu">
-                <a class="dropdown-item" href="mail-empty.html">Mail Empty</a>
-                <a class="dropdown-item" href="mail-view.html">Mail View</a>
-                <a class="dropdown-item" href="mail-create.html">Mail Create</a>
-                <a class="dropdown-item" href="mail-compact.html">Mail Compact</a>
-            </div>
-        </li>
-
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                Tickets <span class="badge badge-pill badge-pink ks-badge ks-sm">3</span>
-            </a>
-
-            <div class="dropdown-menu">
-                <a class="dropdown-item" href="tickets-empty.html">Empty</a>
-                <a class="dropdown-item" href="tickets-list.html">List</a>
-                <a class="dropdown-item" href="tickets-create.html">Create</a>
-                <a class="dropdown-item" href="tickets-view.html">View</a>
-            </div>
-        </li>
-
-        <div class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                <span>Messenger</span>
-            </a>
-            <div class="dropdown-menu">
-                <a class="dropdown-item" href="messenger.html">Default</a>
-                <a class="dropdown-item" href="messenger-group.html">Group</a>
-            </div>
-        </div>
-
-        <li class="nav-item">
-            <a class="nav-link" href="calendar.html">
-                <span class="ks-text">Calendar</span>
-            </a>
-        </li>
-
-        <div class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                <span>File Manager</span>
-            </a>
-            <div class="dropdown-menu">
-                <a class="dropdown-item" href="filemanager-grid.html">Grid Default</a>
-                <a class="dropdown-item" href="filemanager-grid-selected-items.html">Grid Selected Items</a>
-                <a class="dropdown-item" href="filemanager-grid-image.html">Grid Image</a>
-                <a class="dropdown-item" href="filemanager-grid-audio.html">Grid Audio</a>
-                <a class="dropdown-item" href="filemanager-grid-recent.html">Grid Recent</a>
-                <a class="dropdown-item" href="filemanager-list.html">List Default</a>
-                <a class="dropdown-item" href="filemanager-list-selected-items.html">List Selected Items</a>
-                <a class="dropdown-item" href="filemanager-list-recent.html">List Recent</a>
-            </div>
-        </div>
-
-        <div class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                <span>Document Viewer</span>
-            </a>
-            <div class="dropdown-menu">
-                <a class="dropdown-item" href="document-viewer-image.html">Image Viewer</a>
-                <a class="dropdown-item" href="document-viewer-pdf.html">Pdf Viewer</a>
-                <a class="dropdown-item" href="document-viewer-presentation.html">Presentation Viewer</a>
-                <a class="dropdown-item" href="document-viewer-audio.html">Audio Viewer</a>
-            </div>
-        </div>
-
-        <div class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                <span>Form</span>
-            </a>
-            <div class="dropdown-menu">
-                <a class="dropdown-item" href="form-basic-inputs.html">Basic Inputs</a>
-                <a class="dropdown-item" href="form-advanced-inputs.html">Extended Inputs</a>
-                <a class="dropdown-item" href="form-buttons.html">Buttons</a>
-                <a class="dropdown-item" href="form-validation.html">Validation</a>
-                <a class="dropdown-item" href="form-touchspin.html">Touchspin</a>
-                <a class="dropdown-item" href="form-flex-labels.html">Flex Labels</a>
-                <a class="dropdown-item" href="form-autocomplete-and-tags.html">Autocomplete &amp; Tags</a>
-                <a class="dropdown-item" href="form-steps-column.html">Column Steps</a>
-                <a class="dropdown-item" href="form-steps-progress.html">Progress Steps</a>
-            </div>
-        </div>
-
-        <div class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                <span>UI Kit</span>
-            </a>
-            <div class="dropdown-menu">
-                <a class="dropdown-item" href="uikit-bootstrap-ui.html">Bootstrap UI</a>
-                <a class="dropdown-item" href="uikit-typography.html">Typography</a>
-                <a class="dropdown-item" href="uikit-panels.html">Panels</a>
-                <a class="dropdown-item" href="uikit-tables.html">Tables</a>
-                <a class="dropdown-item" href="uikit-tabs.html">Tabs</a>
-                <a class="dropdown-item" href="uikit-default-alerts.html">Alerts</a>
-                <a class="dropdown-item" href="uikit-pagination.html">Pagination</a>
-                <a class="dropdown-item" href="uikit-modal.html">Modal</a>
-            </div>
-        </div>
-
-        <div class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                <span>Components</span>
-            </a>
-            <div class="dropdown-menu">
-                <a class="dropdown-item" href="components-select-select2.html">Select2</a>
-                <a class="dropdown-item" href="components-select-multi.html">Multi Select</a>
-                <a class="dropdown-item" href="components-datepicker-flatpickr.html">Flatpickr</a>
-                <a class="dropdown-item" href="components-datepicker-bootstrap-date-range-picker.html">Range DatePicker</a>
-                <a class="dropdown-item" href="components-ion-range-slider-flat-skin-basic.html">Ion Range Slider</a>
-                <a class="dropdown-item" href="components-nestable.html">Nestable</a>
-            </div>
-        </div>
-
-        <div class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                <span>Profile</span>
-            </a>
-            <div class="dropdown-menu">
-                <a class="dropdown-item" href="profile-social-profile.html">Social Profile</a>
-                <a class="dropdown-item" href="profile-customer-profile.html">Customer Profile</a>
-                <a class="dropdown-item" href="profile-settings-general.html">General Settings</a>
-                <a class="dropdown-item" href="profile-settings-contact-info.html">Contact Info Settings</a>
-                <a class="dropdown-item" href="profile-settings-experience.html">Experience Settings</a>
-                <a class="dropdown-item" href="profile-settings-education.html">Education Settings</a>
-                <a class="dropdown-item" href="profile-settings-organizations.html">Organizations Settings</a>
-                <a class="dropdown-item" href="profile-settings-notifications.html">Notifications Settings</a>
-                <a class="dropdown-item" href="profile-settings-billing.html">Billing Settings</a>
-            </div>
-        </div>
-
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                <span>Pages</span>
-            </a>
-            <div class="dropdown-menu">
-                <a class="dropdown-item" href="pages-blank.html">Blank</a>
-                <a class="dropdown-item" href="pages-error404.html">Error 404</a>
-                <a class="dropdown-item" href="pages-error500.html">Error 500</a>
-                <a class="dropdown-item" href="pages-contacts.html">Contacts</a>
-                <a class="dropdown-item" href="pages-login.html" target="_blank">Login</a>
-                <a class="dropdown-item" href="pages-signup.html" target="_blank">Sign Up</a>
-                <a class="dropdown-item" href="pages-forgot-password.html" target="_blank">Forgot Password</a>
-                <a class="dropdown-item" href="pages-locked-account.html" target="_blank">Locked Account</a>
-                <a class="dropdown-item" href="pages-confirmation.html" target="_blank">Confirmation</a>
-            </div>
-        </li>
-
-        <li class="nav-item">
-            <a class="nav-link" href="../default-primary/index.html" target="_blank">More</a>
-        </li>
-
-        <li class="nav-item">
-            <a class="nav-link disabled" href="#">Disabled</a>
-        </li>
-        <li class="nav-item dropdown ks-navbar-horizontal-responsive">
-            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                <span class="fa fa-bars ks-icon"></span>
-            </a>
-            <div class="dropdown-menu dropdown-menu-right"></div>
-        </li>
-    </ul> -->
+ 
 </div>
 <!-- END NAVBAR HORIZONTAL -->
 
@@ -476,7 +292,10 @@
     <div class="ks-column ks-page">
         <div class="ks-header">
             <section class="ks-title">
-                <h3>Request IT</h3>
+                <button class="btn btn-primary">
+                    <span class="fa fa-plus ks-icon"></span>
+                    <span class="ks-text">Add Request</span>
+                </button>
                 <button class="btn btn-primary-outline ks-light ks-mail-navigation-block-toggle" data-block-toggle=".ks-mail > .ks-navigation">Menu</button>
             </section>
         </div>
@@ -612,18 +431,9 @@
 
                 <div class="ks-emails ks-compact">
                     <div class="ks-header">
-                        <div class="ks-check-all">
-                            <label class="custom-control custom-checkbox ks-no-description">
-                                <input type="checkbox" class="custom-control-input">
-                                <span class="custom-control-indicator"></span>
-                            </label>
-                        </div>
                         <div class="ks-search">
                             <div class="input-icon icon-right icon icon-lg">
-                                <input id="input-group-icon-text" type="text" class="form-control" placeholder="Text">
-                                <span class="icon-addon">
-                                    <span class="fa fa-search"></span>
-                                </span>
+                                <h3>List request work</h3>
                             </div>
                         </div>
                         <div class="ks-actions">
@@ -639,74 +449,110 @@
                                 <span class="fa fa-refresh ks-icon"></span>
                             </button>
                             <button class="btn btn-primary">
-                                <span class="fa fa-plus ks-icon"></span>
-                                <span class="ks-text">Thêm yêu cầu</span>
+                                <span class="ks-text">Reset</span>
+                            </button>
+                            <button class="btn btn-primary">
+                                <span class="ks-text">Search</span>
                             </button>
                         </div>
+                        
+                                             
                     </div>
                     <div class="ks-body ks-scrollable" data-auto-height>
                         <table class="ks-table table table-hover">
+                            <thead>
+                                <tr class="ks-unread ks-selected">
+                                    <th class="ks-checkbox">
+                                        STT
+                                    </th>
+                                    <th class="ks-sender">
+                                        Name of Work
+                                    </th>
+                                    <th class="ks-sender">         
+                                        <span class="ks-name">Priority level</span>
+                                    </th>
+                                    <th class="ks-sender">
+                                        <span class="ks-name">Requester</span>
+                                    </th>
+                                    <th class="ks-sender">
+                                        <span class="ks-name">Performer</span>
+                                    </th>
+                                    <th class="ks-sender">Deadline</th>
+                                    <th class="ks-sender">Status</th>
+                                </tr>
+                            </thead>
                             <tbody>
                                 <tr class="ks-unread ks-selected">
                                     <td class="ks-checkbox">
-                                        <label class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input">
-                                            <span class="custom-control-indicator"></span>
-                                        </label>
-                                    </td>
-                                    <td class="ks-sender">
-                                        <span class="fa fa-star-o ks-favorite"></span>
-                                        <span class="ks-name">Nataly Dawn</span>
-                                        <span class="ks-amount">(3)</span>
+                                        
                                     </td>
                                     <td class="ks-message">
-                                        <span class="ks-badge badge badge-info">Family</span>
-                                        <span class="ks-subject">Message header</span> The fungus Chalciporus piperatus, commonly known as the peppery bolete, is a small mushroom of…
-                                    </td>
-                                    <td class="ks-datetime">today at 8:45 PM</td>
-                                </tr>
-                                <tr>
-                                    <td class="ks-checkbox">
-                                        <label class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input">
-                                            <span class="custom-control-indicator"></span>
-                                        </label>
+                                        <div class="input-icon icon-right icon icon-lg">
+                                            <input id="input-group-icon-text" type="text" class="form-control" placeholder="Search">
+                                            <span class="icon-addon">
+                                                <span class="fa fa-search"></span>
+                                            </span>
+                                        </div>
                                     </td>
                                     <td class="ks-sender">
-                                        <span class="fa fa-star-o ks-favorite"></span>
-                                        <span class="ks-name">Nataly Dawn</span>
-                                    </td>
-                                    <td class="ks-message"><span class="ks-subject">Message header</span> The fungus Chalciporus piperatus, commonly known as the peppery bolete, is a small mushroom of…</td>
-                                    <td class="ks-datetime">today at 8:45 PM</td>
-                                </tr>
-                                <tr class="ks-unread">
-                                    <td class="ks-checkbox">
-                                        <label class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input">
-                                            <span class="custom-control-indicator"></span>
-                                        </label>
+                                        <div class="input-icon icon-right icon icon-lg">
+                                            <select class="form-control">
+                                                <option></option>
+                                                <option>Select</option>
+                                            </select>
+                                        </div>
                                     </td>
                                     <td class="ks-sender">
-                                        <span class="fa fa-star-o ks-favorite"></span>
-                                        <span class="ks-name">Nataly Dawn</span>
-                                    </td>
-                                    <td class="ks-message"><span class="ks-subject">Message header</span> The fungus Chalciporus piperatus, commonly known as the peppery bolete, is a small mushroom of…</td>
-                                    <td class="ks-datetime">today at 8:45 PM</td>
-                                </tr>
-                                <tr>
-                                    <td class="ks-checkbox">
-                                        <label class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input">
-                                            <span class="custom-control-indicator"></span>
-                                        </label>
+                                        <div class="input-icon icon-right icon icon-lg">
+                                            <input id="input-group-icon-text" type="text" class="form-control" placeholder="Search">
+                                            <span class="icon-addon">
+                                                <span class="fa fa-search"></span>
+                                            </span>
+                                        </div>
                                     </td>
                                     <td class="ks-sender">
-                                        <span class="fa fa-star ks-active ks-favorite"></span>
-                                        <span class="ks-name">Nataly Dawn</span>
-                                        <span class="ks-amount">(3)</span>
+                                        <div class="input-icon icon-right icon icon-lg">
+                                            <input id="input-group-icon-text" type="text" class="form-control" placeholder="Search">
+                                            <span class="icon-addon">
+                                                <span class="fa fa-search"></span>
+                                            </span>
+                                        </div>
                                     </td>
-                                    <td class="ks-message"><span class="ks-subject">Message header</span> Redesigned navigation on Mac app Hello, Konstantin! The fungus Chalciporus piperatus, commonly know…</td>
-                                    <td class="ks-datetime">today at 8:45 PM</td>
+                                    <td class="ks-datetime">
+                                        <div class="input-icon icon-right icon icon-lg">
+                                            <input id="input-group-icon-text" type="text" class="form-control" placeholder="Search">
+                                            <span class="icon-addon">
+                                                <span class="fa fa-search"></span>
+                                            </span>
+                                        </div>
+                                    </td>
+                                    <td class="ks-datetime">
+                                        <div class="input-icon icon-right icon icon-lg">
+                                            <select class="form-control">
+                                                <option></option>
+                                                <option>Select</option>
+                                            </select>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="ks-unread ks-selected">
+                                    <td class="ks-checkbox">
+                                        1
+                                    </td>
+                                    <td class="ks-message">
+                                        Active window
+                                    </td>
+                                    <td class="ks-sender">
+                                        <span class="ks-name">Nataly Dawn</span>
+                                    </td>
+                                    <td class="ks-sender">
+                                        <span class="ks-name">Nataly Dawn</span>
+                                    </td>
+                                    <td class="ks-sender">
+                                        <span class="ks-name">Nataly Dawn</span>
+                                    </td>
+                                    <td class="ks-sender">today at 8:45 PM</td>
+                                    <td class="ks-sender">today at 8:45 PM</td>
                                 </tr>
                                                        
                             </tbody>
