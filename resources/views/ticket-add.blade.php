@@ -11,6 +11,7 @@
 
     <!-- BEGIN GLOBAL MANDATORY STYLES -->
     <link rel="stylesheet" type="text/css" href="public/css/bootstrap/bootstrap.min.css">
+    <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/3.1.3/css/bootstrap-datetimepicker.min.css'>
     <link rel="stylesheet" type="text/css" href="public/css/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="public/css/fonts/open-sans/styles.css">
     <link rel="stylesheet" type="text/css" href="public/css/tether/css/tether.min.css">
@@ -446,46 +447,49 @@
                         <div class="col-lg-12 ks-panels-column-section">
                             <div class="card">
                                 <div class="card-block">
-                                    <form>
+                                    <form class="form-container" method="POST">
+                                        {{csrf_field()}}
                                         <div class="form-group row">
                                             <label for="default-input" class="col-sm-2 form-control-label">Name of work</label>
                                             <div class="col-sm-9">
-                                                <input type="text" class="form-control" id="default-input" placeholder="Default input">
+                                                <input type="text" class="form-control" id="default-input" name="name" placeholder="Default input">
                                             </div>
                                         </div>
                                         <div class="form-group row">
                                                 <label for="default-input" class="col-sm-2 form-control-label">Priority level</label>
                                                 <div class="col-sm-4">
-                                                    <select class="form-control">
-                                                        <option>Select 1</option>
-                                                        <option>Select 2</option>
+                                                    <select class="form-control" name="priority">
+                                                        <option value="4">Emergency</option>
+                                                        <option value="3">High</option>
+                                                        <option value="2">Medium</option>
+                                                        <option value="1">Low</option>                           
                                                     </select>
                                                 </div>
                                                 <label for="default-input" class="col-sm-1 form-control-label">Deadline</label>
-                                                <div class="input-group date col-sm-4" id="datetimepicker">
-                                                    <input type="text" class="form-control" />
+                                                <div class="input-group date col-sm-4" id="datetimepicker1">
+                                                    <input type="text" class="form-control" name="deadline"/>
                                                     <span class="input-group-addon">
                                                         <i class="fa fa-calendar" aria-hidden="true"></i>
                                                     </span>
-                                                </div>                                       
+                                                </div>                       
                                         </div>
                                         <div class="form-group row">
                                                 <label for="default-input" class="col-sm-2 form-control-label">Team</label>
                                                 <div class="col-sm-4">
-                                                    <select class="form-control">
-                                                        <option>Select 1</option>
-                                                        <option>Select 2</option>
+                                                    <select class="form-control" name="team">
+                                                        <option value="1">Select 1</option>
+                                                        <option value="2">value</option>
                                                     </select>
                                                 </div>
-                                                <label for="default-input" class="col-sm-1 form-control-label">Involve</label>
+                                                <label for="default-input" class="col-sm-1 form-control-label">Relater</label>
                                                 <div class="col-sm-4">
-                                                    <input type="text" class="form-control" id="default-input">
+                                                    <input type="text" class="form-control" id="default-input" name="relater">
                                                 </div>                                         
                                         </div>
                                         <div class="form-group row">
                                             <label for="default-input-rounded" class="col-sm-2 form-control-label">Content</label>
                                             <div class="col-sm-9">
-                                                <textarea id="content" class="form-control" placeholder="Textare"></textarea>
+                                                <textarea id="content" class="form-control" placeholder="Textare" name="content"></textarea>
                                             </div>
                                         </div>                                        
                                         <div class="form-group row">
@@ -494,15 +498,15 @@
                                                 <button class="btn btn-primary ks-btn-file">
                                                     <span class="fa fa-cloud-upload ks-icon"></span>
                                                     <span class="ks-text">Choose file</span>
-                                                    <input type="file">
+                                                    <input type="file" name="file">
                                                 </button>
                                             </div>
                                         </div>
                                         <div class="form-group row">
                                             <label for="default-input-rounded" class="col-sm-2 form-control-label"></label>
                                             <div class="col-sm-9">
-                                                <button class="btn btn-primary ks-rounded">Submit</button>
-                                                <button class="btn btn-danger ks-rounded">Cancel</button>
+                                                <button type="submit" class="btn btn-primary ks-rounded">Submit</button>
+                                                <button type="submit" class="btn btn-danger ks-rounded">Cancel</button>
                                             </div>
                                         </div>
                                     </form>
@@ -529,8 +533,8 @@
 <script src="public/js/flexibility/flexibility.js"></script>
 <script src="public/js/ckeditor/ckeditor.js"></script>
 <script src="public/js/bootstrap/bootstrap.min.js"></script>
-<script src="public/js/bootstrap/bootstrap-datetimepicker.js"></script>
-
+<script src='http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.min.js'></script>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/3.1.3/js/bootstrap-datetimepicker.min.js'></script>
 <!-- END PAGE LEVEL PLUGINS -->
 
 <!-- BEGIN THEME LAYOUT SCRIPTS -->
@@ -540,12 +544,53 @@
     CKEDITOR.replace('content');
 </script>
 <script type="text/javascript">
-            $(document).ready(function () {
-                $("#datetimepicker").datetimepicker();
-            });
-        </script>
+     $(function () {
+   var bindDatePicker = function() {
+        $(".date").datetimepicker({
+        format:'YYYY-MM-DD',
+            icons: {
+                time: "fa fa-clock-o",
+                date: "fa fa-calendar",
+                up: "fa fa-arrow-up",
+                down: "fa fa-arrow-down"
+            }
+        }).find('input:first').on("blur",function () {
+            // check if the date is correct. We can accept dd-mm-yyyy and yyyy-mm-dd.
+            // update the format if it's yyyy-mm-dd
+            var date = parseDate($(this).val());
 
-<div class="ks-mobile-overlay"></div>
+            if (! isValidDate(date)) {
+                //create date based on momentjs (we have that)
+                date = moment().format('YYYY-MM-DD');
+            }
+
+            $(this).val(date);
+        });
+    }
+   
+   var isValidDate = function(value, format) {
+        format = format || false;
+        // lets parse the date to the best of our knowledge
+        if (format) {
+            value = parseDate(value);
+        }
+
+        var timestamp = Date.parse(value);
+
+        return isNaN(timestamp) == false;
+   }
+   
+   var parseDate = function(value) {
+        var m = value.match(/^(\d{1,2})(\/|-)?(\d{1,2})(\/|-)?(\d{4})$/);
+        if (m)
+            value = m[5] + '-' + ("00" + m[3]).slice(-2) + '-' + ("00" + m[1]).slice(-2);
+
+        return value;
+   }
+   
+   bindDatePicker();
+ });
+</script>
 
 
 </div>

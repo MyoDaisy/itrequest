@@ -17,11 +17,8 @@
 <body>
 
 <div class="ks-page">
-    <div class="ks-header">
-        <a href="#" class="ks-logo">KOSMO</a>
-    </div>
     <div class="ks-body">
-        <div class="ks-logo">KOSMO</div>
+        <div class="ks-logo">IT REQUEST</div>
 
         <div class="card panel panel-default ks-light ks-panel">
             <div class="card-block">
@@ -36,40 +33,33 @@
                             </span>
                         </div>
                     </div>
-                    <p class="text-red">{{ $errors->first('username') }}</p>
+                    <p style="color: red">{{ $errors->first('username') }}</p>
                     <div class="form-group">
                         <div class="input-icon icon-left icon-lg icon-color-primary">
-                            <input type="text" class="form-control" name="password" placeholder="Password">
+                            <input type="password" class="form-control" name="password" placeholder="Password">
                             <span class="icon-addon">
                                 <span class="fa fa-key"></span>
                             </span>
                         </div>
                     </div>
-                    <p class="text-red">{{ $errors->first('password') }}</p>
+                    <p style="color: red">{{ $errors->first('password') }}</p>
+                    <p style="color: red">{{ $errors->first('errorlogin')}}</p>     
+                        
                     <div class="form-group">
                         <button type="submit" class="btn btn-primary btn-block">Login</button>
                     </div>
                     <div class="ks-text-center">
-                        Don't have an account. <a href="pages-signup.html">Sign Up</a>
+                        Don't have an account. <a href="register">Sign Up</a>
                     </div>
                     <div class="ks-text-center">
                         <a href="pages-forgot-password.html">Forgot your password?</a>
-                    </div>
-
-                    <div class="ks-social">
-                        <div>or Log In with social</div>
-                        <div>
-                            <a href="#" class="facebook fa fa-facebook"></a>
-                            <a href="#" class="twitter fa fa-twitter"></a>
-                            <a href="#" class="google fa fa-google"></a>
-                        </div>
                     </div>
                 </form>
             </div>
         </div>
     </div>
     <div class="ks-footer">
-        <span class="ks-copyright">&copy; 2016 Kosmo</span>
+        <span class="ks-copyright">&copy;  2017 ITREQUEST</span>
         <ul>
             <li>
                 <a href="#">Privacy Policy</a>

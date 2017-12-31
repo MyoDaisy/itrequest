@@ -11,18 +11,17 @@
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
 
-Route::get('/signup', function () {
-    return view('signup');
-});
 
-Route::get('/login', 'LoginController@show');
+Route::get('/register', 'Auth\RegisterController@register');
+Route::post('/register', 'Auth\RegisterController@requestRegister');
+Route::get('/signup/update', 'Auth\RegisterController@update');
+Route::get('/', 'Auth\LoginController@login');
+Route::post('/', 'Auth\LoginController@requestLogin');
 
-Route::post('/login', 'LoginController@request');
+Route::get('/ticket', 'Tickets\TicketsViewController@viewRequest');
+Route::get('/ticket-add', 'Tickets\TicketsAddController@add');
+Route::post('/ticket-add', 'Tickets\TicketsAddController@requestAdd');
+Auth::routes();
 
-Route::get('/add', function () {
-    return view('addrequest');
-});
+Route::get('/home', 'HomeController@index')->name('home');
