@@ -11,7 +11,7 @@ use App\Http\Requests;
 use Validator;
 use Auth;
 
-class RegisterController extends Controller
+class SignupController extends Controller
 {
     //Show signup view
     public function register(){
@@ -47,7 +47,7 @@ class RegisterController extends Controller
         $firstname=$request->input('firstname');
         $lastname=$request->input('lastname');
         $username=$request->input('username');
-        $password=md5($request->input('password'));
+        $password=$request->input('password');
 
         $user = Users::where('username',$username)->first();
 
@@ -63,7 +63,7 @@ class RegisterController extends Controller
             $newUser->first_name = $firstname;
             $newUser->last_name = $lastname;
             $newUser->username = $username;
-            $newUser->password = $password;
+            $newUser->password = bcrypt($password);
             $newUser->profile_picture='public/image/profile.jpg';
             $newUser->team_id = '0';
             $newUser->authority = '0';

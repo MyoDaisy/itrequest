@@ -14,12 +14,12 @@ use Auth;
 
 class LoginController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('guest')->except('logout');
-    }
+    // public function __construct()
+    // {
+    //     $this->middleware('guest')->except('logout');
+    // }
 
-    //Show logn view
+    // Show login view
     public function login(){
         return view('login');
     }
@@ -28,7 +28,6 @@ class LoginController extends Controller
     //Submit login
 
     public function requestLogin(Request $request){
-        
         $rule = [
             'username'=>'required',
              'password'=>'required'
@@ -46,42 +45,28 @@ class LoginController extends Controller
         }
         else{
             $username = $request->input('username');
-            $password = md5($request->input('password'));
+            $password = $request->input('password');
 
             $data=[
                 'username'=>$username,
-                'password '=>$password
+                'password'=>$password
             ];
 
-            dd(Auth::attempt($data));
-            //     return redirect()->intended('/ticket');
-            // }
-            // else{
-            //     $errors = new MessageBag(['errorlogin' => 'Username or password is incorrect']);
-            //     return redirect()->back()->withInput()->withErrors($errors);
-            // }
+            if(Auth::attempt($data)){
+                return redirect()->intended('/ticket');
+            }
+            else{
+                $errors = new MessageBag(['errorlogin' => 'Username or password is incorrect']);
+                return redirect()->back()->withInput()->withErrors($errors);
+            }
         }
         
 
-        // $user = Users::where('username',$username)->where('password',$password)->first();
-        // if(!isset($user)){
-        //     $errors = new MessageBag(['errorlogin' => 'Username or password is incorrect']);
-        //     return redirect()->back()->withInput()->withErrors($errors);
-        // }
-        // else{
-        //     $request->session()->put('login', true);
-        //     session(['user123', [
-        //         'userId' => $user->user_id,
-        //         'firstName' => $user->first_name,
-        //         'lastName' => $user->last_name,
-        //         'username' => $user->username,
-        //         'password' => $user->password,
-        //         'profilePiture' => $user->profile_picture,
-        //         'teamId' => $user->team_id,
-        //         'authority' => $user->authority
-        //     ]]);
-        //     print_r(session()->get('login')); die();
-        //     return redirect()->intended('/ticket');
-        // }
+    }
+
+    // Log out
+    public function getLogout(){
+        Auth::logout();
+        return redirect()->route('login');
     }
 }

@@ -49,7 +49,7 @@
                         <button type="submit" class="btn btn-primary btn-block">Login</button>
                     </div>
                     <div class="ks-text-center">
-                        Don't have an account. <a href="register">Sign Up</a>
+                        Don't have an account. <a href="signup">Sign Up</a>
                     </div>
                     <div class="ks-text-center">
                         <a href="pages-forgot-password.html">Forgot your password?</a>

@@ -245,9 +245,9 @@
                             <span class="fa fa-question-circle ks-icon" aria-hidden="true"></span>
                             <span>Help</span>
                         </a>
-                        <a class="dropdown-item" href="#">
+                        <a  class="dropdown-item" href="#">
                             <span class="fa fa-sign-out ks-icon" aria-hidden="true"></span>
-                            <span>Logout</span>
+                            <span><a href="{{ route('getLogout') }}">Logout</a></span>
                         </a>
                     </div>
                 </div>
@@ -281,8 +281,298 @@
 
 <!-- BEGIN NAVBAR HORIZONTAL -->
 <div class="ks-navbar-horizontal ks-info">
- 
+    @if(isset($success))
+        <center><h5 style="color: red">{{$sucess}}</h5></center>
+    @endif
+
 </div>
 <!-- END NAVBAR HORIZONTAL -->
 
 
+
+
+<div class="ks-container">
+
+    <div class="ks-column ks-page">
+        <div class="ks-header">
+            <section class="ks-title">
+                <a href="{{ route('addTicket') }}">
+                    <button class="btn btn-primary">
+                        <span class="fa fa-plus ks-icon"></span>
+                        <span class="ks-text">Add Request</span>
+                    </button>
+                </a>
+                <button class="btn btn-primary-outline ks-light ks-mail-navigation-block-toggle" data-block-toggle=".ks-mail > .ks-navigation">Menu</button>
+            </section>
+        </div>
+        <div class="ks-content">
+            <div class="ks-body ks-mail">
+
+                <!-- Menu -->
+                <div class="ks-navigation ks-browse ks-scrollable" data-auto-height>
+                    <div class="ks-wrapper">
+                        <div class="ks-separator" data-toggle="collapse" data-target="#my-request">
+                            <b style="color: red">Công việc tôi yêu cầu</b>
+                            <a href="#" class="ks-add">
+                            <span class="ks-control">
+                                <span class="ks-icon">+</span>
+                            </span>
+                            </a>
+                        </div>
+                        <ul id="my-request" class="ks-menu collapse">
+                            <li>
+                                <a href="{{ route('myAllRequest') }}" class="ks-menu-item ks-active">
+                                    <span class="ks-text">All</span>
+                                    <span class="ks-badge badge badge-pill badge-pink">15</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ route('myNewRequest') }}" class="ks-menu-item">
+                                    <span class="ks-text">New</span>
+                                    <span class="ks-badge badge badge-pill badge-default-outline">2</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ route('myInprogressRequest') }}" class="ks-menu-item">
+                                    <span class="ks-text">Inprogress</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ route('myResolvedRequest') }}" class="ks-menu-item">
+                                    <span class="ks-text">Resolved</span>
+                                    <span class="ks-badge badge badge-pill badge-pink">1</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ route('myOutOfDateRequest') }}" class="ks-menu-item">
+                                    <span class="ks-text">Out Of Date</span>
+                                </a>
+                            </li>
+                        </ul>
+
+                        <div class="ks-separator" data-toggle="collapse" data-target="#ralate-work">
+                            <b style="color: red">Công việc liên quan</b>
+                            <a href="#" class="ks-add">
+                            <span class="ks-control">
+                                <span class="ks-icon">+</span>
+                            </span>
+                            </a>
+                        </div>
+                        <ul id="ralate-work" class="ks-menu collapse">
+                            <li>
+                                <a href="{{ route('relateAllRequest') }}" class="ks-menu-item">
+                                    <span class="ks-text">All</span>
+                                    <span class="badge ks-circle badge-danger"></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ route('relateNewRequest') }}" class="ks-menu-item">
+                                    <span class="ks-text">New</span>
+                                    <span class="badge ks-circle badge-info"></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ route('relateInprogressRequest') }}" class="ks-menu-item">
+                                    <span class="ks-text">Inprogress</span>
+                                    <span class="badge ks-circle badge-warning"></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ route('relateResolvedRequest') }}" class="ks-menu-item">
+                                    <span class="ks-text">Resolved</span>
+                                    <span class="badge ks-circle badge-warning"></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ route('relateOutOfDateRequest') }}" class="ks-menu-item">
+                                    <span class="ks-text">Out Of Date</span>
+                                    <span class="badge ks-circle badge-warning"></span>
+                                </a>
+                            </li>
+                        </ul>
+
+                        <div class="ks-separator"  data-toggle="collapse" data-target="#assign-work">
+                            <b style="color: red">Việc tôi được giao</b>
+                            <a href="#" class="ks-add">
+                            <span class="ks-control">
+                                <span class="ks-icon">+</span>
+                            </span>
+                            </a>
+                        </div>
+                        <ul id="assign-work" class="ks-menu collapse">
+                            <li>
+                                <a href="{{ route('assignedAllRequest') }}" class="ks-menu-item ks-active">
+                                    <span class="ks-text">All</span>
+                                    <span class="ks-badge badge badge-pill badge-pink">15</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ route('assignedNewRequest') }}" class="ks-menu-item">
+                                    <span class="ks-text">New</span>
+                                    <span class="ks-badge badge badge-pill badge-default-outline">2</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ route('assignedInprogressRequest') }}" class="ks-menu-item">
+                                    <span class="ks-text">Inprogress</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ route('assignedAllRequest') }}" class="ks-menu-item">
+                                    <span class="ks-text">FeedBack</span>
+                                    <span class="ks-badge badge badge-pill badge-pink">1</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ route('assignedOutOfDateRequest') }}" class="ks-menu-item">
+                                    <span class="ks-text">Out Of Date</span>
+                                </a>
+                            </li>
+                        </ul>
+
+                        <div class="ks-separator"  data-toggle="collapse" data-target="#team-work">
+                            <b style="color: red">Công việc của team</b>
+                            <a href="#" class="ks-add">
+                            <span class="ks-control">
+                                <span class="ks-icon">+</span>
+                            </span>
+                            </a>
+                        </div>
+                        <ul id="team-work" class="ks-menu collapse">
+                            <li>
+                                <a href="{{ route('teamAllRequest') }}" class="ks-menu-item ks-active">
+                                    <span class="ks-text">All</span>
+                                    <span class="ks-badge badge badge-pill badge-pink">15</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ route('teamNewRequest') }}" class="ks-menu-item">
+                                    <span class="ks-text">New</span>
+                                    <span class="ks-badge badge badge-pill badge-default-outline">2</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ route('teamInprogressRequest') }}" class="ks-menu-item">
+                                    <span class="ks-text">Inprogress</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ route('teamAllRequest') }}" class="ks-menu-item">
+                                    <span class="ks-text">FeedBack</span>
+                                    <span class="ks-badge badge badge-pill badge-pink">1</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ route('teamOutOfDateRequest') }}" class="ks-menu-item">
+                                    <span class="ks-text">Out Of Date</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ route('teamClosedRequest') }}" class="ks-menu-item">
+                                    <span class="ks-text">Closed</span>
+                                </a>
+                            </li>
+
+                        </ul>
+
+                        <div class="ks-separator">
+                            <b style="color: red">Nhân viên</b>
+                            <a href="{{route('employee')}}" class="ks-add">
+                            <span class="ks-control">
+                                <span class="ks-icon">+</span>
+                            </span>
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- End menu -->
+
+                <div class="ks-emails ks-compact">
+                    @section('content')
+                    @show
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- BEGIN PAGE LEVEL PLUGINS -->
+<script src="public/js/jquery/jquery.min.js"></script>
+<script src="public/js/responsejs/response.min.js"></script>
+<script src="public/js/loading-overlay/loadingoverlay.min.js"></script>
+<script src="public/js/tether/tether.min.js"></script>
+<script src="public/js/bootstrap/bootstrap.min.js"></script>
+<script src="public/js/jscrollpane/jquery.jscrollpane.min.js"></script>
+<script src="public/js/jscrollpane/jquery.mousewheel.js"></script>
+<script src="public/js/flexibility/flexibility.js"></script>
+<script src="public/js/ckeditor/ckeditor.js"></script>
+<script src="public/js/bootstrap/bootstrap.min.js"></script>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.min.js'></script>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/3.1.3/js/bootstrap-datetimepicker.min.js'></script>
+<!-- END PAGE LEVEL PLUGINS -->
+
+<!-- BEGIN THEME LAYOUT SCRIPTS -->
+<script src="public/js/scripts/common.min.js"></script>
+<!-- END THEME LAYOUT SCRIPTS -->
+
+<script>
+    CKEDITOR.replace('content');
+</script>
+<script type="text/javascript">
+     $(function () {
+   var bindDatePicker = function() {
+        $(".date").datetimepicker({
+        format:'YYYY-MM-DD',
+            icons: {
+                time: "fa fa-clock-o",
+                date: "fa fa-calendar",
+                up: "fa fa-arrow-up",
+                down: "fa fa-arrow-down"
+            }
+        }).find('input:first').on("blur",function () {
+            // check if the date is correct. We can accept dd-mm-yyyy and yyyy-mm-dd.
+            // update the format if it's yyyy-mm-dd
+            var date = parseDate($(this).val());
+
+            if (! isValidDate(date)) {
+                //create date based on momentjs (we have that)
+                date = moment().format('YYYY-MM-DD');
+            }
+
+            $(this).val(date);
+        });
+    }
+   
+   var isValidDate = function(value, format) {
+        format = format || false;
+        // lets parse the date to the best of our knowledge
+        if (format) {
+            value = parseDate(value);
+        }
+
+        var timestamp = Date.parse(value);
+
+        return isNaN(timestamp) == false;
+   }
+   
+   var parseDate = function(value) {
+        var m = value.match(/^(\d{1,2})(\/|-)?(\d{1,2})(\/|-)?(\d{4})$/);
+        if (m)
+            value = m[5] + '-' + ("00" + m[3]).slice(-2) + '-' + ("00" + m[1]).slice(-2);
+
+        return value;
+   }
+   
+   bindDatePicker();
+ });
+</script>
+
+<div class="ks-mobile-overlay"></div>
+
+
+</div>
+<!-- END SETTINGS BLOCK -->
+</body>
+</html>
