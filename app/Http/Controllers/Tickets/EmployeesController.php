@@ -7,6 +7,7 @@ use App\Tickets;
 use App\Users;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use App\Http\Requests;
 use Validator;
 use Auth;
 
@@ -18,8 +19,12 @@ class EmployeesController extends Controller
         return view('employees',['listEmployees'=>$listEmployees]);
     }
 
-    public function update(Request $requests){
-
+    public function update(Request $request, $id){
+    	$authority = $request->input('authority');
+    	$employee = Users::find($id);	
+    		$employee->authority = $authority;
+    	$employee->save();
+    	return redirect()->route('employee');
     }
 
     

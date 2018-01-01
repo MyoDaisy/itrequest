@@ -53,7 +53,7 @@ class LoginController extends Controller
             ];
 
             if(Auth::attempt($data)){
-                return redirect()->intended('/ticket');
+                return redirect()->intended('/my-all-request');
             }
             else{
                 $errors = new MessageBag(['errorlogin' => 'Username or password is incorrect']);

@@ -67,6 +67,7 @@ class SignupController extends Controller
             $newUser->profile_picture='public/image/profile.jpg';
             $newUser->team_id = '0';
             $newUser->authority = '0';
+            $newUser->remember_token = '0';
         $newUser->save();
         return redirect()->intended('/');
 

@@ -10,11 +10,11 @@ use Illuminate\Http\Request;
 use Validator;
 use Auth;
 
-class TicketsViewMyAssignedRequestController extends Controller
+class TicketsViewCompanyRequestController extends Controller
 {
     
     public function viewAllRequest(){
-        $listTickets = Tickets::where('assigned_to',Auth::user()->user_id)->get();
+        $listTickets = Tickets::all();   
         foreach ($listTickets as $ticket) {
             $ticket->performer = Users::where('user_id',$ticket->assigned_to)->first();
             $ticket->requester = Users::where('user_id',$ticket->created_by)->first();
@@ -23,7 +23,7 @@ class TicketsViewMyAssignedRequestController extends Controller
     }
 
     public function viewNewRequest(){
-        $listTickets = Tickets::where('assigned_to',Auth::user()->user_id)->where('status',1)->get();
+        $listTickets = Tickets::where('status',1)->get();
         foreach ($listTickets as $ticket) {
             $ticket->performer = Users::where('user_id',$ticket->assigned_to)->first();
             $ticket->requester = Users::where('user_id',$ticket->created_by)->first();
@@ -32,7 +32,7 @@ class TicketsViewMyAssignedRequestController extends Controller
     }
 
     public function viewInprogressRequest(){
-        $listTickets = Tickets::where('assigned_to',Auth::user()->user_id)->where('status',2)->get();
+        $listTickets = Tickets::where('status',2)->get();
         foreach ($listTickets as $ticket) {
             $ticket->performer = Users::where('user_id',$ticket->assigned_to)->first();
             $ticket->requester = Users::where('user_id',$ticket->created_by)->first();
@@ -40,8 +40,17 @@ class TicketsViewMyAssignedRequestController extends Controller
         return view('ticket-view',['listTickets'=>$listTickets]);
     }
 
-    public function viewFeedbackRequest(){
-        $listTickets = Tickets::where('assigned_to',Auth::user()->user_id)->where('status',4)->get();
+    public function  viewResovedRequest(){
+        $listTickets = Tickets::where('status',3)->get();
+        foreach ($listTickets as $ticket) {
+            $ticket->performer = Users::where('user_id',$ticket->assigned_to)->first();
+            $ticket->requester = Users::where('user_id',$ticket->created_by)->first();
+        }
+        return view('ticket-view',['listTickets'=>$listTickets]);
+    }
+
+    public function  viewFeedbackRequest(){
+        $listTickets = Tickets::where('status',4)->get();
         foreach ($listTickets as $ticket) {
             $ticket->performer = Users::where('user_id',$ticket->assigned_to)->first();
             $ticket->requester = Users::where('user_id',$ticket->created_by)->first();
@@ -50,11 +59,19 @@ class TicketsViewMyAssignedRequestController extends Controller
     }
 
     public function viewOutOfDateRequest(){
-        $listTickets = Tickets::where('assigned_to',Auth::user()->user_id)->where('status',5)->get();
+        $listTickets = Tickets::where('status',5)->get();
         foreach ($listTickets as $ticket) {
             $ticket->performer = Users::where('user_id',$ticket->assigned_to)->first();
             $ticket->requester = Users::where('user_id',$ticket->created_by)->first();
         }
         return view('ticket-view',['listTickets'=>$listTickets]);
-    }   
+    }
+    public function viewClosedRequest(){
+        $listTickets = Tickets::where('status',6)->get();
+        foreach ($listTickets as $ticket) {
+            $ticket->performer = Users::where('user_id',$ticket->assigned_to)->first();
+            $ticket->requester = Users::where('user_id',$ticket->created_by)->first();
+        }
+        return view('ticket-view',['listTickets'=>$listTickets]);
+    }
 }

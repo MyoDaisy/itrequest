@@ -41,7 +41,7 @@
         <a href="#" class="ks-sidebar-toggle"><i class="fa fa-bars" aria-hidden="true"></i></a>
         <a href="#" class="ks-sidebar-mobile-toggle"><i class="fa fa-bars" aria-hidden="true"></i></a>
         <!-- END RESPONSIVE SIDEBAR TOGGLER -->
-        <a href="#" class="ks-logo">Request IT</a>
+        <a href="{{route('myAllRequest')}}" class="ks-logo">Request IT</a>
 
     </div>
     <!-- END LOGO -->
@@ -67,34 +67,13 @@
                         </a>
                     </div>
                 </form>
-                <a class="nav-item nav-link" href="#">Dashboard</a>
-                <div class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                        Dropdown
-                    </a>
-                    <div class="dropdown-menu ks-info" aria-labelledby="Preview">
-                        <a class="dropdown-item ks-active" href="#">Dropdown Link 1</a>
-                        <a class="dropdown-item" href="#">Dropdown Link 2</a>
-                        <a class="dropdown-item" href="#">Dropdown Link 3</a>
-                        <div class="dropdown-item dropdown">
-                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                                Dropdown
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="Preview">
-                                <a class="dropdown-item" href="#">Dropdown Link 1</a>
-                                <a class="dropdown-item" href="#">Dropdown Link 2</a>
-                                <a class="dropdown-item" href="#">Dropdown Link 3</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
             <!-- END NAVBAR MENU -->
 
             <!-- BEGIN NAVBAR ACTIONS -->
             <div class="ks-navbar-actions">
                 <!-- BEGIN NAVBAR MESSAGES -->
-                <div class="nav-item dropdown ks-messages">
+                <!-- <div class="nav-item dropdown ks-messages">
                     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
                         <span class="fa fa-envelope ks-icon" aria-hidden="true">
                             <span class="badge badge-pill badge-info">3</span>
@@ -144,88 +123,15 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
                 <!-- END NAVBAR MESSAGES -->
 
-                <!-- BEGIN NAVBAR NOTIFICATIONS -->
-                <div class="nav-item dropdown ks-notifications">
-                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                        <span class="fa fa-bell ks-icon" aria-hidden="true">
-                            <span class="badge badge-pill badge-info">7</span>
-                        </span>
-                        <span class="ks-text">Notifications</span>
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="Preview">
-                        <ul class="nav nav-tabs ks-nav-tabs ks-info" role="tablist">
-                            <li class="nav-item">
-                                <a class="nav-link active" href="#" data-toggle="tab" data-target="#navbar-notifications-all" role="tab">All</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#" data-toggle="tab" data-target="#navbar-notifications-activity" role="tab">Activity</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#" data-toggle="tab" data-target="#navbar-notifications-comments" role="tab">Comments</a>
-                            </li>
-                        </ul>
-                        <div class="tab-content">
-                            <div class="tab-pane ks-notifications-tab active" id="navbar-notifications-all" role="tabpanel">
-                                <div class="ks-wrapper ks-scrollable">
-                                    <a href="#" class="ks-notification">
-                                        <div class="ks-avatar">
-                                            <img src="public/image/avatar.jpg" width="36" height="36">
-                                        </div>
-                                        <div class="ks-info">
-                                            <div class="ks-user-name">Emily Carter <span class="ks-description">has uploaded 1 file</span></div>
-                                            <div class="ks-text"><span class="fa fa-file-text-o ks-icon"></span> logo vector doc</div>
-                                            <div class="ks-datetime">1 minute ago</div>
-                                        </div>
-                                    </a>
-                                    <a href="#" class="ks-notification">
-                                        <div class="ks-action">
-                                            <span class="ks-default">
-                                                <span class="fa fa-briefcase ks-icon"></span>
-                                            </span>
-                                        </div>
-                                        <div class="ks-info">
-                                            <div class="ks-user-name">New project created</div>
-                                            <div class="ks-text">Dashboard UI</div>
-                                            <div class="ks-datetime">1 minute ago</div>
-                                        </div>
-                                    </a>
-                                    <a href="#" class="ks-notification">
-                                        <div class="ks-action">
-                                            <span class="ks-error">
-                                                <span class="fa fa-times-circle ks-icon"></span>
-                                            </span>
-                                        </div>
-                                        <div class="ks-info">
-                                            <div class="ks-user-name">File upload error</div>
-                                            <div class="ks-text"><span class="fa fa-file-text-o ks-icon"></span> logo vector doc</div>
-                                            <div class="ks-datetime">10 minutes ago</div>
-                                        </div>
-                                    </a>
-                                </div>
-
-                                <div class="ks-view-all">
-                                    <a href="#">Show more</a>
-                                </div>
-                            </div>
-                            <div class="tab-pane ks-empty" id="navbar-notifications-activity" role="tabpanel">
-                                There are no activities.
-                            </div>
-                            <div class="tab-pane ks-empty" id="navbar-notifications-comments" role="tabpanel">
-                                There are no comments.
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- END NAVBAR NOTIFICATIONS -->
 
                 <!-- BEGIN NAVBAR USER -->
                 <div class="nav-item dropdown ks-user">
                     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
                         <span class="ks-avatar">
-                            <img src="public/image/avatar.jpg" width="36" height="36">
+                            <img src="{{Auth::user()->profile_picture}}" width="36" height="36">
                         </span>
                         <span class="ks-info">
                             <span class="ks-name">Robert Dean</span>
@@ -233,21 +139,9 @@
                         </span>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="Preview">
-                        <a class="dropdown-item" href="#">
-                            <span class="fa fa-user-circle-o ks-icon"></span>
-                            <span>Profile</span>
-                        </a>
-                        <a class="dropdown-item" href="#">
-                            <span class="fa fa-wrench ks-icon" aria-hidden="true"></span>
-                            <span>Settings</span>
-                        </a>
-                        <a class="dropdown-item" href="#">
-                            <span class="fa fa-question-circle ks-icon" aria-hidden="true"></span>
-                            <span>Help</span>
-                        </a>
-                        <a  class="dropdown-item" href="#">
+                        <a  class="dropdown-item" href="{{ route('getLogout') }}">
                             <span class="fa fa-sign-out ks-icon" aria-hidden="true"></span>
-                            <span><a href="{{ route('getLogout') }}">Logout</a></span>
+                            <span>Logout</span>
                         </a>
                     </div>
                 </div>
@@ -350,7 +244,7 @@
                             </li>
                         </ul>
 
-                        <div class="ks-separator" data-toggle="collapse" data-target="#ralate-work">
+                        <!-- <div class="ks-separator" data-toggle="collapse" data-target="#ralate-work">
                             <b style="color: red">Công việc liên quan</b>
                             <a href="#" class="ks-add">
                             <span class="ks-control">
@@ -389,8 +283,9 @@
                                     <span class="badge ks-circle badge-warning"></span>
                                 </a>
                             </li>
-                        </ul>
+                        </ul> -->
 
+                        @if(Auth::user()->authority > 0)
                         <div class="ks-separator"  data-toggle="collapse" data-target="#assign-work">
                             <b style="color: red">Việc tôi được giao</b>
                             <a href="#" class="ks-add">
@@ -418,7 +313,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="{{ route('assignedAllRequest') }}" class="ks-menu-item">
+                                <a href="{{ route('assignedFeedbackRequest') }}" class="ks-menu-item">
                                     <span class="ks-text">FeedBack</span>
                                     <span class="ks-badge badge badge-pill badge-pink">1</span>
                                 </a>
@@ -429,7 +324,9 @@
                                 </a>
                             </li>
                         </ul>
+                        @endif
 
+                        @if(Auth::user()->authority > 1)
                         <div class="ks-separator"  data-toggle="collapse" data-target="#team-work">
                             <b style="color: red">Công việc của team</b>
                             <a href="#" class="ks-add">
@@ -457,7 +354,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="{{ route('teamAllRequest') }}" class="ks-menu-item">
+                                <a href="{{ route('teamFeedbackRequest') }}" class="ks-menu-item">
                                     <span class="ks-text">FeedBack</span>
                                     <span class="ks-badge badge badge-pill badge-pink">1</span>
                                 </a>
@@ -475,14 +372,65 @@
 
                         </ul>
 
-                        <div class="ks-separator">
-                            <b style="color: red">Nhân viên</b>
-                            <a href="{{route('employee')}}" class="ks-add">
+                        @endif
+
+                        @if(Auth::user()->authority > 2)
+
+                        <div class="ks-separator"  data-toggle="collapse" data-target="#company-work">
+                            <b style="color: red">Công việc của công ty</b>
+                            <a href="#" class="ks-add">
                             <span class="ks-control">
                                 <span class="ks-icon">+</span>
                             </span>
                             </a>
                         </div>
+                        <ul id="company-work" class="ks-menu collapse">
+                            <li>
+                                <a href="{{ route('companyAllRequest') }}" class="ks-menu-item ks-active">
+                                    <span class="ks-text">All</span>
+                                    <span class="ks-badge badge badge-pill badge-pink">15</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ route('companyNewRequest') }}" class="ks-menu-item">
+                                    <span class="ks-text">New</span>
+                                    <span class="ks-badge badge badge-pill badge-default-outline">2</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ route('companyInprogressRequest') }}" class="ks-menu-item">
+                                    <span class="ks-text">Inprogress</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ route('companyFeedbackRequest') }}" class="ks-menu-item">
+                                    <span class="ks-text">FeedBack</span>
+                                    <span class="ks-badge badge badge-pill badge-pink">1</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ route('companyOutOfDateRequest') }}" class="ks-menu-item">
+                                    <span class="ks-text">Out Of Date</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ route('companyClosedRequest') }}" class="ks-menu-item">
+                                    <span class="ks-text">Closed</span>
+                                </a>
+                            </li>
+
+                        </ul>
+
+                        <div class="ks-separator">
+                            <b style="color: red">Nhân viên</b>
+                            <a href="{{url('employee')}}" class="ks-add">
+                            <span class="ks-control">
+                                <span class="ks-icon">+</span>
+                            </span>
+                            </a>
+                        </div>
+
+                        @endif
 
                     </div>
                 </div>
@@ -508,7 +456,6 @@
 <script src="public/js/jscrollpane/jquery.mousewheel.js"></script>
 <script src="public/js/flexibility/flexibility.js"></script>
 <script src="public/js/ckeditor/ckeditor.js"></script>
-<script src="public/js/bootstrap/bootstrap.min.js"></script>
 <script src='http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.min.js'></script>
 <script src='http://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/3.1.3/js/bootstrap-datetimepicker.min.js'></script>
 <!-- END PAGE LEVEL PLUGINS -->

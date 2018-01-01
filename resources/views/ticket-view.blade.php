@@ -68,7 +68,10 @@
                                         <div class="input-icon icon-right icon icon-lg">
                                             <select class="form-control">
                                                 <option></option>
-                                                <option>Select</option>
+                                                <option value="4">Emergency</option>
+                                                <option value="3">High</option>
+                                                <option value="2">Medium</option>
+                                                <option value="1">Low</option>
                                             </select>
                                         </div>
                                     </td>
@@ -100,7 +103,12 @@
                                         <div class="input-icon icon-right icon icon-lg">
                                             <select class="form-control">
                                                 <option></option>
-                                                <option>Select</option>
+                                                <option value="6">Closed</option>
+                                                <option value="5">Cancel</option>
+                                                <option value="4">Feedback</option>
+                                                <option value="3">Resolved</option>
+                                                <option value="2">Progress</option>
+                                                <option value="1">New</option>
                                             </select>
                                         </div>
                                     </td>
@@ -136,14 +144,18 @@
                                         {{$ticket->deadline}}
                                     </td>
                                     <td class="ks-sender">
-                                        @if ($ticket->status == 0)
+                                        @if ($ticket->status == 1)
                                             New
-                                        @elseif ($ticket->priority == 1)
+                                        @elseif ($ticket->status == 2)
                                             Inprogress
-                                        @elseif ($ticket->priority == 2)
+                                        @elseif ($ticket->status == 3)
                                             Resolved
-                                        @elseif ($ticket->priority == 3)
-                                            Closed    
+                                        @elseif ($ticket->status == 4)
+                                            Feedback
+                                        @elseif ($ticket->status == 5)
+                                            Cancel
+                                        @elseif ($ticket->status == 6)
+                                            Closed   
                                         @endif    
                                     </td>
                                 </tr>

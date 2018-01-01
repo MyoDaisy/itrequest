@@ -47,7 +47,7 @@
                             <tbody>
                                 
                                 @foreach($listEmployees as $employee)
-                                <form class="form-container" method="POST">
+                                <form class="form-container" action="{{url("employee-$employee->user_id")}}" method="POST">
                                     {{csrf_field()}}
                                     <tr class="ks-unread ks-selected">
                                         <td class="ks-sender">
@@ -69,20 +69,30 @@
                                                 @elseif ($employee->authority == 1)
                                                     Employes
                                                 @elseif ($employee->authority == 2)
-                                                    Sub-Leader
+                                                    Leader Team
                                                 @elseif ($employee->authority == 3)
-                                                    Leader
+                                                    Leader Company
                                                 @endif
                                             </span>
                                         </td>
                                         <td class="ks-sender">
                                             <div class="input-icon icon-right icon icon-lg">
-                                                <select class="form-control">
-                                                    <option value="{{$employee->authority}}"></option>
+                                                <select class="form-control" name="authority">
+                                                    <option value="{{$employee->authority}}">
+                                                        @if ($employee->authority == 0)
+                                                            Requester
+                                                        @elseif ($employee->authority == 1)
+                                                            Employes
+                                                        @elseif ($employee->authority == 2)
+                                                            Leader Team
+                                                        @elseif ($employee->authority == 3)
+                                                            Leader Company
+                                                        @endif
+                                                    </option>
                                                     <option value="0">Requester</option>
                                                     <option value="1">Employee</option>
-                                                    <option value="2">Sub-Leader</option>
-                                                    <option value="3">Leader</option>
+                                                    <option value="2">Leader Team</option>
+                                                    <option value="3">Leader Company</option>
                                                 </select>
                                             </div>
                                         </td>

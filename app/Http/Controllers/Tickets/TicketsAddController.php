@@ -61,7 +61,7 @@ class TicketsAddController extends Controller
                 $newTicket->team_id = $teamId;
                 $newTicket->assigned_to = $assign;
                 $newTicket->content = $content;
-                $newTicket->status = 0;
+                $newTicket->status = 1;
             $newTicket->save();
             return redirect()->route('myAllRequest');
         }
